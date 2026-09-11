@@ -1,4 +1,4 @@
-const PROXY_URL = 'https://proxy.corsfix.com/?';
+const PROXY_URL = 'https://test.cors.workers.dev/?';
 
 /**
  * Searches for a teacher's personal university web page.
