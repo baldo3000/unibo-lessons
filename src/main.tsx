@@ -16,7 +16,7 @@ import './styles/main.css';
 const App = () => {
   // Sync state with appStore pub/sub
   const [storeState, setStoreState] = useState<AppState>(appStore.getState());
-  
+  const normalizeCourseIdForApi = (courseId: string) => courseId.endsWith('Magistrale') ? courseId.slice(0, -'Magistrale'.length) : courseId;
   useEffect(() => {
     const unsubscribe = appStore.subscribe(() => {
       setStoreState(appStore.getState());
@@ -56,9 +56,9 @@ const App = () => {
     if (draftCourse) {
       const courseInfo = coursesData[draftCourse];
       if (courseInfo && courseInfo.type) {
-        fetchCurricula(courseInfo.type, draftCourse).then((data) => {
+        const apiCourseId = normalizeCourseIdForApi(draftCourse);
+        fetchCurricula(courseInfo.type, apiCourseId).then((data) => {
           setCurriculaList(data);
-          // If draft curriculum isn't in fetched curricula, clear it
           if (draftCurriculum && !data.some((c) => c.value === draftCurriculum)) {
             setDraftCurriculum(null);
           }
@@ -89,10 +89,10 @@ const App = () => {
     };
 
     const dateStr = formatDateString(storeState.currentDate);
-
+    const apiCourseId = normalizeCourseIdForApi(storeState.course);
     fetchLessons(
       storeState.type,
-      storeState.course,
+      apiCourseId,
       storeState.anno,
       dateStr,
       dateStr,
