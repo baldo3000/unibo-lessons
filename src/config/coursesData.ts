@@ -148,6 +148,10 @@ export const coursesData: Record<string, Course> = {
         "course_name": "Ingegneria e scienze informatiche",
         "type": "laurea"
     },
+    "IngegneriaScienzeInformaticheMagistrale": {
+        "course_name": "Ingegneria e scienze informatiche (Magistrale)",
+        "type": "magistrale"
+    },
     "IngegneriaElettronicaEnergiaInformazione": {
         "course_name": "Ingegneria elettronica",
         "type": "laurea"
