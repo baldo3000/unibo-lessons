@@ -52,7 +52,7 @@ export function trovaInsegnamento(
   const targetUrl = `https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti?search=True&codiceMateria=${codiceMateria}&annoAccademico=${academicYear}&CodeInsegnamentoButton=cerca`;
 
   // Fetch using the proxy directly without outer double-encoding
-  return fetch(PROXY_URL + targetUrl)
+  return fetch(targetUrl)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
