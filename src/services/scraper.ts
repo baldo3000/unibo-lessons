@@ -1,4 +1,4 @@
-const PROXY_URL = 'https://api.allorigins.win/raw?url=';
+const PROXY_URL = 'https://proxy.corsfix.com/?';
 
 /**
  * Searches for a teacher's personal university web page.
