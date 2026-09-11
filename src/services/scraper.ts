@@ -1,4 +1,4 @@
-const PROXY_URL = 'https://api.cors.lol/?url=';
+const PROXY_URL = 'https://api.allorigins.win/raw?url=';
 
 /**
  * Searches for a teacher's personal university web page.
