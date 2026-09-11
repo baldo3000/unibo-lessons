@@ -11,7 +11,7 @@ export function cercaDocente(teacherName: string): Promise<string> {
   )}&tipo=people`;
 
   // Fetch using the proxy directly without outer double-encoding
-  return fetch(PROXY_URL + targetUrl)
+  return fetch(targetUrl)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
