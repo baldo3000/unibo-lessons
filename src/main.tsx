@@ -154,7 +154,7 @@ const App = () => {
   const isSingleCycle =
     selectedDraftCourseInfo?.type === 'singlecycle' ||
     selectedDraftCourseInfo?.type === 'magistralecu';
-  const maxYear = isSingleCycle ? 5 : selectedDraftCourseInfo?.type === 'magistralecu' ? 2 : 3;
+  const maxYear = isSingleCycle ? 5 : selectedDraftCourseInfo?.type === 'magistrale' ? 2 : 3;
 
   const yearTexts = [
     strings.first_year,
