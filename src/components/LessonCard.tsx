@@ -27,12 +27,10 @@ export const LessonCard = ({ lesson, strings, effectiveAcademicYear }: LessonCar
     // Extract base module code (e.g. 12345_1 -> 12345)
     const baseCode = teachingCode.split('_')[0];
 
-    console.debug('[trovaInsegnamento:CALL]', {
-        baseCode,
-        teachingCodeOriginal: teachingCode,
-        teacher,
-        effectiveAcademicYear
-      });
+    console.log('Not Splitted');
+    console.log(teachingCode);
+    console.log('Splitted');
+    console.log(baseCode);
     
     trovaInsegnamento(baseCode, teacher, effectiveAcademicYear)
       .then((link) => {
