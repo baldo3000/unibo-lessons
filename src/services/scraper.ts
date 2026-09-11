@@ -1,4 +1,4 @@
-const PROXY_URL = 'https://corsproxy.io/?';
+const PROXY_URL = 'https://api.allorigins.win/raw?url=';
 
 /**
  * Searches for a teacher's personal university web page.
@@ -11,7 +11,7 @@ export function cercaDocente(teacherName: string): Promise<string> {
   )}&tipo=people`;
 
   // Fetch using the proxy directly without outer double-encoding
-  return fetch(targetUrl)
+  return fetch(PROXY_URL + targetUrl)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -52,7 +52,7 @@ export function trovaInsegnamento(
   const targetUrl = `https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti?search=True&codiceMateria=${codiceMateria}&annoAccademico=${academicYear}&CodeInsegnamentoButton=cerca`;
 
   // Fetch using the proxy directly without outer double-encoding
-  return fetch(targetUrl)
+  return fetch(PROXY_URL + targetUrl)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
